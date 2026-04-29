@@ -1,17 +1,25 @@
-# Garden Advice App
+def get_season(month):
+    seasons = {
+        "summer": ["December", "January", "February"],
+        "autumn": ["March", "April", "May"],
+        "winter": ["June", "July", "August"],
+        "spring": ["September", "October", "November"]
+    }
+
+    for season, months in seasons.items():
+        if month in months:
+            if season == "summer":
+                return "Summer - Water your plants regularly."
+            elif season == "autumn":
+                return "Autumn - Time to prune plants."
+            elif season == "winter":
+                return "Winter - Protect plants from frost."
+            elif season == "spring":
+                return "Spring - Great time for planting."
+
+    return "Invalid month"
+
 
 print("Welcome to the Garden Advice App!")
-
 month = input("Enter the month: ")
-
-if month == "December" or month == "January" or month == "February":
-    print("It is summer. Water your plants regularly.")
-elif month == "March" or month == "April" or month == "May":
-    print("It is autumn. Time to prune plants.")
-elif month == "June" or month == "July" or month == "August":
-    print("It is winter. Protect plants from frost.")
-elif month == "September" or month == "October" or month == "November":
-    print("It is spring. Great time for planting.")
-else:
-    print("Invalid month entered")
-
+print(get_season(month))
